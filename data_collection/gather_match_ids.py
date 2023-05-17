@@ -69,14 +69,6 @@ def get_summoner_puuid(region, username):
     # Get the unique identifier (puuid) of a summoner by their name
     return LOL_WATCHER.summoner.by_name(region, username)['puuid']
 
-"""
-def get_all_summoners(past_matches):
-    # Extract the puuid of all summoners in the past matches
-    summoners = [summoner['puuid'] for match in past_matches for summoner in match['info']['participants']]
-    # Remove duplicates from the list of summoners
-    return list(set(summoners))
-"""
-
 def get_all_summoners(past_matches):
     # Extract the puuid of all summoners in the past matches
     summoners = []
