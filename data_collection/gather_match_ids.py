@@ -18,12 +18,18 @@ import time
 import datetime
 from riotwatcher import LolWatcher, ApiError
 import os
+import configparser
 
-API_KEY = os.getenv("LOL_API_KEY")
-LOL_WATCHER = LolWatcher(API_KEY)  
-QUEUE_TYPE = 420  # 420 = Ranked 5v5 Solo Queue. Full list of queue types at: https://static.developer.riotgames.com/docs/lol/queues.json
+#API_KEY = os.getenv("LOL_API_KEY")
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+API_KEY = config['DEFAULT']['API_KEY']
+
+LOL_WATCHER = LolWatcher(API_KEY)
+QUEUE_TYPE = 400  # 420 = Ranked 5v5 Solo Queue. 400 = Normal Draft 5v5. Full list of queue types at: https://static.developer.riotgames.com/docs/lol/queues.json
 REGION = 'euw1'
-PAST_MATCHES_COUNT = 3 # number of last matches we gather
+PAST_MATCHES_COUNT = 1 # number of last matches we gather
 SEED_USER_NAME = 'OrangenSandwich' # Seed username we get the first few matches from
 OLDEST_ALLOWED_DATE = datetime.date.today() - datetime.timedelta(days=14) # Define cutoff date for matches that are taken into account
 OLDEST_ALLOWED_DATE = int(time.mktime(OLDEST_ALLOWED_DATE.timetuple())) # Convert the datetime object into an integer Unix timestamp
