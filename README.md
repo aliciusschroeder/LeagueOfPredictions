@@ -102,7 +102,8 @@ Here's the rough workflow of how to use the scripts. Keep in mind that this repo
 
 ## Disclaimer
 
-This project is purely an experiment driven by scientific curiosity and the love for the game. It is in no way intended to provide an unfair advantage to players in League of Legends or inflict harm on Riot Games. Any trademark terms used in this repository are for informational purposes only and belong to their respective owners.
+This project is purely an experiment driven by scientific curiosity and the love for the game. It is in no way intended to provide an unfair advantage to players in League of Legends or inflict harm on Riot Games. 
+This project was build in compliance with Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project. Any trademark terms used in this repository are for informational purposes only and belong to their respective owners.
 
 ## Thought-Provoking Questions
 
