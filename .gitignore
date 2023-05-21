@@ -1,0 +1,3 @@
+# Ignore temporary txt/csv files created by the scripts
+*.txt
+*.csv
