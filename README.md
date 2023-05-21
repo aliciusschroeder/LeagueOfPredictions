@@ -2,6 +2,28 @@
 
 LeagueOfPredictions is an experimental project for League of Legends players that aims to predict the outcome of games during the "Pick & Ban Phase" with higher accuracy than the expected 50% chance based on the elo system. By factoring in player's recent performance, proficiency with chosen champions, and team compatibility, it aims to provide an advantage for players to strategically decide whether to continue or dodge a game, ultimately improving their ranking.
 
+## Table of Contents
+
+- [The Underlying Idea](#the-underlying-idea)
+- [Achievements So Far](#achievements-so-far)
+- [Project Overview](#project-overview)
+- [Technical Explanation](#technical-explanation)
+  - [Data Collection](#data-collection)
+    - [gather_match_ids.py](#gathermatchidspy)
+    - [build_training_data.py](#buildtrainingdatapy)
+    - [separate_teams_and_outcomes.py](#separateteamsandoutcomespy)
+  - [Training & Validation](#training--validation)
+    - [train.py](#trainpy)
+    - [validate.py](#validatepy)
+  - [Prediction](#prediction)
+    - [prediction.py](#predictionpy)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [Disclaimer](#disclaimer)
+- [Thought-Provoking Questions](#thought-provoking-questions)
+- [Contributions / Your turn!](#contributions--your-turn)
+
+
 ## The Underlying Idea
 
 In League of Legends, players are matched based on their preferred role and their elo - a rating system designed to estimate a player's skill level. While the elo system is designed to ensure a long-term win chance of exactly 50%, it has its limitations. It does not account for subtle yet influential variables like the player's current mood, the level of proficiency on the champion they have chosen for the match, or their compatibility with their team's playstyle.
@@ -23,6 +45,7 @@ LeagueOfPredictions consists of three key stages:
 ## Technical Explanation
 
 ### Data Collection
+
 The data collection process is a crucial step in our project, laying the foundation for the later stages of analysis and prediction. It involves using a suite of Python scripts to interact with the Riot Games API and gather relevant game data.
 
 - **gather_match_ids.py**: This script uses the RiotWatcher API to gather a list of League of Legends Match-ID's.
@@ -38,6 +61,46 @@ The data collection process is a crucial step in our project, laying the foundat
 
 - **prediction.py**: A tool to predict the game's outcome during champ-select based on summoner performance and their picked champions.
 
+### Prerequisites
+
+To run ths project, you will need access to the Riot Games API. Access is easily granted but at the time of writing the number of requests is very limited.
+`RiotWatcher <https://github.com/pseudonym117/Riot-Watcher>`__ is used as a thin wrapper on top of the `Riot Games API for League
+of Legends <https://developer.riotgames.com/>`__.
+To install RiotWatcher:
+
+::
+
+    pip install riotwatcher
+    
+### Usage
+
+Here's the rough workflow of how to use the scripts. Keep in mind that this repository is still in the experimental phase and no 1Click-run-to-finish solution is provided yet:
+
+1. Gather match IDs:
+   ```
+   python gather_match_ids.py
+   ```
+2. Build the training data:
+   ```
+   python build_training_data.py
+   ```
+3. Separate teams and outcomes:
+   ```
+   python separate_teams_and_outcomes.py
+   ```
+4. Train the model:
+   ```
+   python train.py
+   ```
+5. Validate the model:
+   ```
+   python validate.py
+   ```
+6. Make predictions:
+   ```
+   python prediction.py
+   ```
+
 ## Disclaimer
 
 This project is purely an experiment driven by scientific curiosity and the love for the game. It is in no way intended to provide an unfair advantage to players in League of Legends or inflict harm on Riot Games. Any trademark terms used in this repository are for informational purposes only and belong to their respective owners.
@@ -50,8 +113,7 @@ Embarking on this journey has brought forth some interesting philosophical and p
 - If such predictive models become mainstream in the gaming world, what implications would it have on the landscape of e-sports? 
 - Would it lead to more strategic gameplay, or would it distort the spirit of competition?
 
-## Your turn!
-
-I welcome any suggestions for improvement, new ideas, challenges to my assumptions, additional data points, or analyses of the importance of various factors. 
+## Contributions / Your turn!
+Contributions to LeagueOfPredictions are greatly appreciated! A lot of things are still on my ToDo-List and I welcome any suggestions for improvement, new ideas, challenges to my assumptions, additional data points, or analyses of the importance of various factors. 
 I encourage you to participate and share your insights. If you find this repository interesting or inspiring, please let me know! 
 Together we can deepen our understanding of predictive analytics in gaming!
