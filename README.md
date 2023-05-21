@@ -63,12 +63,11 @@ The data collection process is a crucial step in our project, laying the foundat
 
 ### Prerequisites
 
-To run ths project, you will need access to the Riot Games API. Access is easily granted but at the time of writing the number of requests is very limited.
-`RiotWatcher <https://github.com/pseudonym117/Riot-Watcher>`__ is used as a thin wrapper on top of the `Riot Games API for League
-of Legends <https://developer.riotgames.com/>`__.
-To install RiotWatcher:
+To run this project, you will need access to the Riot Games API. Access is easily granted but, at the time of writing, the number of requests is very limited.
 
-::
+[RiotWatcher](https://github.com/pseudonym117/Riot-Watcher) is used as a thin wrapper on top of the [Riot Games API for League of Legends](https://developer.riotgames.com/).
+
+To install RiotWatcher:
 
     pip install riotwatcher
     
