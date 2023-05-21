@@ -4,10 +4,10 @@ LeagueOfPredictions is an experimental project for League of Legends players tha
 
 ## 📚 Table of Contents
 
-- [The Underlying Idea](#the-underlying-idea)
-- [Achievements So Far](#achievements-so-far)
-- [Project Overview](#project-overview)
-- [Technical Explanation](#technical-explanation)
+- [The Underlying Idea](#-the-underlying-idea)
+- [Achievements So Far](#-achievements-so-far)
+- [Project Overview](-#project-overview)
+- [Technical Explanation](#-technical-explanation)
   - [Data Collection](#data-collection)
     - [gather_match_ids.py](#gathermatchidspy)
     - [build_training_data.py](#buildtrainingdatapy)
@@ -17,11 +17,11 @@ LeagueOfPredictions is an experimental project for League of Legends players tha
     - [validate.py](#validatepy)
   - [Prediction](#prediction)
     - [prediction.py](#predictionpy)
-- [Prerequisites](#prerequisites)
-- [Usage](#usage)
-- [Disclaimer](#disclaimer)
-- [Thought-Provoking Questions](#thought-provoking-questions)
-- [Contributions / Your turn!](#contributions--your-turn)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+- [Disclaimer](#-disclaimer)
+- [Thought-Provoking Questions](#-thought-provoking-questions)
+- [Contributions / Your turn!](#-contributions--your-turn)
 
 
 ## 🧠 The Underlying Idea
