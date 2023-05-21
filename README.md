@@ -2,7 +2,7 @@
 
 LeagueOfPredictions is an experimental project for League of Legends players that aims to predict the outcome of games during the "Pick & Ban Phase" with higher accuracy than the expected 50% chance based on the elo system. By factoring in player's recent performance, proficiency with chosen champions, and team compatibility, it aims to provide an advantage for players to strategically decide whether to continue or dodge a game, ultimately improving their ranking.
 
-## Table of Contents
+## 📚 Table of Contents
 
 - [The Underlying Idea](#the-underlying-idea)
 - [Achievements So Far](#achievements-so-far)
@@ -24,17 +24,17 @@ LeagueOfPredictions is an experimental project for League of Legends players tha
 - [Contributions / Your turn!](#contributions--your-turn)
 
 
-## The Underlying Idea
+## 🧠 The Underlying Idea
 
 In League of Legends, players are matched based on their preferred role and their elo - a rating system designed to estimate a player's skill level. While the elo system is designed to ensure a long-term win chance of exactly 50%, it has its limitations. It does not account for subtle yet influential variables like the player's current mood, the level of proficiency on the champion they have chosen for the match, or their compatibility with their team's playstyle.
 
 This is where LeagueOfPredictions steps in. It aims to fill the gap left by the elo system by providing a sophisticated model that leverages these variables. Players are equipped with this information during the "Pick & Ban Phase" - a critical stage where a player can opt to leave the game, incurring a loss of only a tenth of the ranking ladder points they would lose in the event of a lost game. An accurate prediction model can provide a significant advantage, enabling players to make informed decisions and navigate their way up the ranking ladder effectively.
 
-## Achievements So Far
+## 🏆 Achievements So Far
 
 Our project, though still in the experimental phase, has shown promising results. We have trained the model on 3,000 datasets and managed to achieve an accuracy of 87.9% for predicting outcomes of ranked games in silver elo. This accuracy far surpasses the expected 50%, paving the way for a player to improve their rank by strategically choosing whether to play or dodge games. It also provides us with a concrete basis for further improvements and refinements in the model.
 
-## Project Overview
+## 📋 Project Overview
 
 LeagueOfPredictions consists of three key stages: 
 
@@ -42,7 +42,7 @@ LeagueOfPredictions consists of three key stages:
 2. **Training & Validation** - Using tabular data for binary classification (win/loss) and testing the model.
 3. **Prediction** - Deploying an assistant that predicts the win/loss probability based on user inputs and then helping the user decide whether to continue with the game.
 
-## Technical Explanation
+## 💻 Technical Explanation
 
 ### Data Collection
 
@@ -100,12 +100,13 @@ Here's the rough workflow of how to use the scripts. Keep in mind that this repo
    python prediction.py
    ```
 
-## Disclaimer
+## ❗ Disclaimer
 
 This project is purely an experiment driven by scientific curiosity and the love for the game. It is in no way intended to provide an unfair advantage to players in League of Legends or inflict harm on Riot Games. 
+
 This project was build in compliance with Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project. Any trademark terms used in this repository are for informational purposes only and belong to their respective owners.
 
-## Thought-Provoking Questions
+## 💭 Thought-Provoking Questions
 
 Embarking on this journey has brought forth some interesting philosophical and practical questions. 
 - If a player, equipped with the knowledge of the likely game outcome, decides to play regardless, would this awareness influence their in-game decisions and tactics? 
@@ -113,7 +114,9 @@ Embarking on this journey has brought forth some interesting philosophical and p
 - If such predictive models become mainstream in the gaming world, what implications would it have on the landscape of e-sports? 
 - Would it lead to more strategic gameplay, or would it distort the spirit of competition?
 
-## Contributions / Your turn!
-Contributions to LeagueOfPredictions are greatly appreciated! A lot of things are still on my ToDo-List and I welcome any suggestions for improvement, new ideas, challenges to my assumptions, additional data points, or analyses of the importance of various factors. 
+## 🙌 Contributions / Your turn!
+Contributions to LeagueOfPredictions are greatly appreciated! A lot of things are still on my ToDo-List and I welcome any suggestions for improvement, new ideas, challenges to my assumptions, additional data points, or analyses of the importance of various factors.
+
 I encourage you to participate and share your insights. If you find this repository interesting or inspiring, please let me know! 
+
 Together we can deepen our understanding of predictive analytics in gaming!
