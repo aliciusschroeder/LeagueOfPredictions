@@ -64,11 +64,33 @@ class LeagueAnalyzer:
 
 
     def analyze_game(self, match_id):
-        # Retrieves information about summoners and their champions in a certain
-        # match Returns a list of dictionaries, each representing one summoner 
-        # who participated in the given match. Dictionary attributes include
-        # per summoner: puuid, championId, summonerId and whether they won.
-        summoners_and_champ = self.get_summoners_and_champ(match_id)
+        """Analyzes a League of Legends game by retrieving information about summoners and their champions.
+
+        Args:
+            match_id (int): The ID of the game to be analyzed.
+
+        Returns:
+            dict: A dictionary containing the analyzed information for the game. The dictionary includes the following keys:
+                - 'id': The ID of the analyzed match.
+                - 'win': Indicates the result of the game. 0 represents a win for summoners 1-5. 1 represents a win for summoners 6-10, and 'ERR' indicates an error in determining the result.
+                - For each summoner in the game (up to 10 summoners), the following keys are included:
+                    - 'summoner_X_winrate': The overall win rate of the summoner (X represents the summoner number).
+                    - 'summoner_X_champ_winrate': The win rate of the summoner on the champion they played.
+                    - 'summoner_X_avgKda': The average KDA (Kill/Death/Assist ratio) of the summoner.
+                    - 'summoner_X_champ_avgKda': The average KDA of the summoner on the champion they played.
+                    - 'summoner_X_streak': The latest unbroken streak of wins or losses for the summoner.
+                    - 'summoner_X_consistency': The consistency of the summoner's champion pick as a percentage.
+                    - 'summoner_X_champMastery': The mastery points of the summoner on the champion they played.
+
+        Raises:
+            ApiError: If there is an error while retrieving data from the League of Legends API.
+
+        Note:
+            - This function depends on other helper methods within the LeagueAnalyzer class to retrieve the necessary information.
+            - The summoners are numbered from 1 to 10 based on their order in the game. Only available summoners will have their data analyzed.
+            - The 'win' key represents the result of the game. 0 represents a win for summoners 1-5. 1 represents a win for summoners 6-10, and 'ERR' indicates an error in determining the result.
+        """
+        summoners_and_champ = self.get_summoners_and_champ(match_id) # returns summoner details numbered 0-9
 
         # we don't want to include the current match in past-game analysis
         excluded_matches = [match_id]
@@ -79,6 +101,7 @@ class LeagueAnalyzer:
         for summoner_count, summoner in enumerate(summoners_and_champ, start=1):
             if self.DEBUG_LEVEL <= self.DEBUG_LEVEL_DEBUG: print(f'[{summoner_count}/10] Analyzing summoner')
             summoners.append(self.analyze_summoner(summoner, excluded_matches))
+
 
         if summoners_and_champ[4]['win']==summoners_and_champ[5]['win']:
             win = "ERR"
@@ -296,6 +319,7 @@ class LeagueAnalyzer:
             }
 
     def analyze_match(self, match_id):
+        '''Analyzes match_id via analyze_game() plus Error-handling and Debugging'''
         if self.DEBUG_LEVEL <= self.DEBUG_LEVEL_INFO: print(f'[{match_id}] Going to analyze match')
         while True:
             try:
