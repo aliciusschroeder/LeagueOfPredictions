@@ -32,7 +32,7 @@ This is where LeagueOfPredictions steps in. It aims to fill the gap left by the 
 
 ## 🏆 Achievements So Far
 
-Our project, though still in the experimental phase, has shown promising results. We have trained the model on 3,000 datasets and managed to achieve an accuracy of 87.9% for predicting outcomes of ranked games in silver elo. This accuracy far surpasses the expected 50%, paving the way for a player to improve their rank by strategically choosing whether to play or dodge games. It also provides us with a concrete basis for further improvements and refinements in the model.
+Our project, though still in the experimental phase, has shown promising results. We have trained the model on 300,000 datasets and managed to achieve an accuracy of 87.9% for predicting outcomes of ranked games in silver elo. This accuracy far surpasses the expected 50%, paving the way for a player to improve their rank by strategically choosing whether to play or dodge games. It also provides us with a concrete basis for further improvements and refinements in the model.
 
 ## 📋 Project Overview
 
